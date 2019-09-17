@@ -17,9 +17,9 @@ public class Lotto {
             arr[i] = i + 1;
         }
 
-        System.out.println(Arrays.toString(arr));
+        // System.out.println(Arrays.toString(arr));
         Collections.shuffle(Arrays.asList(arr));
-        System.out.println(Arrays.toString(arr));
+        // System.out.println(Arrays.toString(arr));
 
         //wybranie szęsciu pierwszych i przypsanie ich jako wylosowanej szóstki
 
@@ -44,6 +44,7 @@ public class Lotto {
         for (int n : numbers) {
             System.out.print("[" + n + "]");
         }
+        System.out.println();
 
         // pobieranie danych od użytkownika
 
@@ -53,13 +54,12 @@ public class Lotto {
 
         while (z < 6) {
 
-            System.out.println();
-            System.out.println("Podaj liczbę: ");
+            System.out.print("Podaj liczbę z zakresu 1 - 49: ");
 
             // pobieraj, aż użytkownik poda int
 
             while (!scan.hasNextInt()) {
-                scan.nextLine();
+                scan.next();
                 System.out.print("Podaj właściwy parametr: ");
             }
 
@@ -87,10 +87,10 @@ public class Lotto {
         }
 
         for (int u : usersNumbers) {
-            System.out.print(u);
+            System.out.print("[" + u + "]");
         }
 
-        for(int i = 0; i < numbers.length - 1; i++){
+        /*for(int i = 0; i < numbers.length - 1; i++){
             for(int j = 0; j < numbers.length - 1; j++){
                 if(numbers[j] > numbers[j+1]){
                     bubble = numbers[j];
@@ -98,7 +98,7 @@ public class Lotto {
                     numbers[j+1] = bubble;
                 }
             }
-        }
+        }*/
 
         int check = 0;
         for(int i = 0; i < numbers.length; i++){

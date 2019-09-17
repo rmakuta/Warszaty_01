@@ -1,13 +1,10 @@
 package rmakuta.workshops;
 
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class GeussNumber {
-
-    public static void main(String[] args)
-    {
+    public static void main(String[] args){
 
         Random r = new Random();
         int number = r.nextInt(10)+1;
@@ -41,7 +38,5 @@ public class GeussNumber {
                 break;
             }
         }
-
-
     }
 }
