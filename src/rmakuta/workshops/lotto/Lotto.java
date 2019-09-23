@@ -1,4 +1,4 @@
-package rmakuta.workshops;
+package rmakuta.workshops.lotto;
 
 import java.util.Arrays;
 import java.util.Collections;
