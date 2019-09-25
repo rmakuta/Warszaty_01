@@ -48,14 +48,11 @@ public class Dice {
             }
         }
 
-        System.out.println(quantityThrows + " : " + typeDice + " : " + numberToAdd);
-
         Random random = new Random();
         int result = 0, i = 0;
 
         do{
             int tmp = random.nextInt(Integer.parseInt(typeDice))+1;
-            System.out.println("los: " + tmp);
             result += tmp;
             i++;
         }while (i<Integer.parseInt(quantityThrows));
