@@ -1,3 +1,11 @@
+/*
+* Kostka do gry
+* xDy+z
+* y – rodzaj kostek, których należy użyć (np. D6, D10),
+* x – liczba rzutów kośćmi (jeśli rzucamy raz, ten parametr jest pomijalny),
+* z – (opcjonalnie) liczba, którą należy dodać (lub odjąć) do wyniku rzutów.
+*/
+
 package rmakuta.workshops.dice;
 
 import java.util.Random;
@@ -12,10 +20,11 @@ public class Dice {
     }
     public static int throwDice(String code){
 
-        String quantityThrows = "0", typeDice = "0", numberToAdd = "0";
+        String quantityThrows = "0", typeDice = "0", numberToAdd = "";
         char option = ' ';
         char[] codeArr = code.toCharArray();
         int choose = 0;
+        boolean toAdd = false;
 
         for (int i=0; i<codeArr.length; i++){
             if (codeArr[i] == 'D'){
@@ -33,25 +42,27 @@ public class Dice {
                     typeDice += codeArr[i];
                     break;
                 case 2:
+                    toAdd = true;
                     numberToAdd += codeArr[i];
                     break;
             }
         }
 
-//        System.out.println(quantityThrows + " : " + typeDice + " : " + numberToAdd);
+        System.out.println(quantityThrows + " : " + typeDice + " : " + numberToAdd);
 
         Random random = new Random();
         int result = 0, i = 0;
 
         do{
             int tmp = random.nextInt(Integer.parseInt(typeDice))+1;
-//            System.out.println("los: " + tmp);
+            System.out.println("los: " + tmp);
             result += tmp;
             i++;
         }while (i<Integer.parseInt(quantityThrows));
 
-        result += Integer.parseInt(numberToAdd);
-
+        if(toAdd){
+            result += Integer.parseInt(numberToAdd);
+        }
         return result;
     }
 }
