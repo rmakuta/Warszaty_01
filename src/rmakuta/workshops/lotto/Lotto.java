@@ -47,7 +47,6 @@ public class Lotto {
         System.out.println();
 
         // pobieranie danych od użytkownika
-
         Scanner scan = new Scanner(System.in);
         int[] usersNumbers = new int[6];
         int z = 0;
@@ -57,7 +56,6 @@ public class Lotto {
             System.out.print("Podaj liczbę z zakresu 1 - 49: ");
 
             // pobieraj, aż użytkownik poda int
-
             while (!scan.hasNextInt()) {
                 scan.next();
                 System.out.print("Podaj właściwy parametr: ");
