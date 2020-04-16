@@ -9,53 +9,54 @@ public class GuessNumber2 {
 
         int min = 0, max = 1000, guess;
         boolean next = true;
+        int step = 1;
         String answer;
 
         Scanner scan = new Scanner(System.in);
 
         while (next){
 
-//            guess = ((max - min)/2) + min;
-//
-//            System.out.println("Zgaduję: " + guess + "Zgadłem? (t/n)");
-//            answer = scan.nextLine();
-//
-//            if(answer.equals("t")){
-//                System.out.println("Wygrałem!");
-//                next = false;
-//            }else {
-//                System.out.println("Za dużo? (t/n)");
-//                answer = scan.nextLine();
-//                if(answer.equals("t")){
-//                    max = guess;
-//                }else {
-//                    System.out.println("Za mało? (t/n)");
-//                    answer = scan.nextLine();
-//                    if(answer.equals("t")){
-//                        min = guess;
-//                    }else {
-//                        System.out.println("Nie oszukuj!");
-//                    }
-//                }
-//            }
-
             guess = ((max - min)/2) + min;
 
-            System.out.println("Zgaduję: " + guess + " (za dużo/za mało/zgadłeś)");
+            System.out.println("Zgaduję " + step++ + ": " + guess + " Zgadłem? (t/n)");
             answer = scan.nextLine();
 
-            switch (answer){
-                case "za dużo":
+            if(answer.equals("t")){
+                System.out.println("Wygrałem!");
+                next = false;
+            }else {
+                System.out.println("Za dużo? (t/n)");
+                answer = scan.nextLine();
+                if(answer.equals("t")){
                     max = guess;
-                    break;
-                case "za mało":
-                    min = guess;
-                    break;
-                case "zgadłeś":
-                    System.out.println("Wygrałem!");
-                    next = false;
-                    break;
+                }else {
+                    System.out.println("Za mało? (t/n)");
+                    answer = scan.nextLine();
+                    if(answer.equals("t")){
+                        min = guess;
+                    }else {
+                        System.out.println("Nie oszukuj!");
+                    }
+                }
             }
+
+//            guess = ((max - min)/2) + min;
+//
+//            System.out.println("Zgaduję " + step++ + ": " + guess + " (za dużo/za mało/zgadłeś)");
+//            answer = scan.nextLine();
+//
+//            switch (answer){
+//                case "za dużo":
+//                    max = guess;
+//                    break;
+//                case "za mało":
+//                    min = guess;
+//                    break;
+//                case "zgadłeś":
+//                    System.out.println("Wygrałem!");
+//                    next = false;
+//                    break;
+//            }
         }
     }
 }

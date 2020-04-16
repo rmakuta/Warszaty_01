@@ -31,7 +31,7 @@ public class MostPopularWords {
             }
             fileWriter.close();
 
-            String[] excludedWords = {"jest", "które", "tylko", "przez", "żeby", "gwałt", "takiego"};
+            String[] excludedWords = {"jest", "które", "tylko", "przez", "żeby", "minister", "takiego"};
             File file = new File("popular_words.txt");
             Scanner scan = new Scanner(file);
             FileWriter fileFilteredWriter = new FileWriter("filtered_popular_words.txt", true);
