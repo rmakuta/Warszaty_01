@@ -1,5 +1,5 @@
 # Warszaty_01
-Pierwszy warsztat, podsumowujący pierszy moduł 
+Pierwszy warsztat, podsumowujący pierwszy moduł 
 (Java podstawy) kursu Java Web Developer w Coders Lab.
 
 **Dice**
